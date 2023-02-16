@@ -13,6 +13,11 @@
 
 - However, if you want to pass a primitive type by reference in Java, one way to achieve this is to wrap the primitive type in an object, such as a java.lang.Integer, java.lang.Float, java.lang.Double, etc. and pass the object reference to the method.
 
+
+## Inheritence
+
+
+
 ## Encapsulation
 
 - Hiding the charactersitc of an object but making its methods public
