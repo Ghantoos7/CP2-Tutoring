@@ -108,7 +108,7 @@ public class Dog extends Animal {
 
 ## Abstact Classes 
 
-```
+```java
 public abstract class Animal {
     protected String name;
 
