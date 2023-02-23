@@ -105,3 +105,38 @@ public class Dog extends Animal {
 
 9. set(index, element) - This method replaces the element at the specified index in the ArrayList with the specified element.
 
+
+## Abstact Classes 
+
+```
+public abstract class Animal {
+    protected String name;
+
+    public Animal(String n) {
+        name = n;
+    }
+
+    public abstract void makeSound();
+}
+
+```
+In this example, Animal is an abstract class that has a single abstract method makeSound(). This method doesn't have a body, so any concrete class that extends Animal must implement this method.
+
+Animal also has a constructor that takes a name parameter, which is used to set the name instance variable.
+
+
+```java
+public class Dog extends Animal {
+    public Dog(String name) {
+        super(name);
+    }
+
+    public void makeSound() {
+        System.out.println("Woof!");
+    }
+}
+```
+
+This class has a constructor that calls the superclass constructor using the super keyword, and also implements the makeSound() method by printing "Woof!" to the console.
+
+By making Animal an abstract class with an abstract method, we can define a common interface for all animals without having to implement the makeSound() method for every single animal subclass. Instead, we can simply extend Animal and implement the makeSound() method for each specific animal.
