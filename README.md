@@ -1,7 +1,9 @@
-# CP2-Tutoring-Session-1
+# CP2-Tutoring
 
+## Session-01
+-----
 
-## Passing down by refrence vs by value
+## Passing down by reference vs by value
 
 - In Java, passing by reference and passing by value have different meanings.
 
@@ -11,24 +13,18 @@
 
 - In Java, primitive data types such as int, float, and boolean are passed by value, while objects are passed by reference. However, since all object variables in Java are actually references, it can sometimes be confusing to understand whether you are passing an object by reference or by value.
 
-- However, if you want to pass a primitive type by reference in Java, one way to achieve this is to wrap the primitive type in an object, such as a java.lang.Integer, java.lang.Float, java.lang.Double, etc. and pass the object reference to the method.
-
-
-## Inheritence
-
-
 
 ## Encapsulation
 
-- Hiding the charactersitc of an object but making its methods public
+- Hiding the characteristic of an object but making its methods public
 
 - We have 3 visibility modifiers:
 
-  1. Public : accsesible outside the class
+  1. Public : accessible outside the class
   
-  2. Private : accsesible inside the class only
+  2. Private : accessible inside the class only
   
-  3. Protected accsesible inside the class and in subclasses that are extending our current class
+  3. Protected accessible inside the class and in subclasses that are extending our current class
 
 
 ## Overloading vs Overriding
@@ -81,30 +77,110 @@ public class Dog extends Animal {
 
 - In this example, the "Dog" class overrides the "makeSound" method of the "Animal" class with a new implementation that prints "The dog barks" to the console. When you create an instance of the "Dog" class and call the "makeSound" method, the new implementation in the "Dog" class will be called instead of the original implementation in the "Animal" class.
 
-## Need of Casting
+## Casting
+
+- Any variable declared to be of type class *A*, can point to any object of actual type *A*, or actual type *B* **iff(iff = if and only if)** *B* is a subclass of *A*, **the inverse is not true**
+
+- :warning: at ***compile-time**, **declared type is checked*** and at ***run-time actual type is checked*** (late binding)
+
+
+### Student Class
+```java
+public class Student {
+    
+  private String name;
+  private int id;
+
+  public Student(String n, int i) {
+    name = n;
+    id = i;
+  }
+
+  // Getters and setters
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String n) {
+    name = n;
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int i) {
+    id = i;
+  }
+}
+```
+### Class GradStudent subclass of class Student
+```java
+public class GradStudent extends Student {
+
+  private String researchArea;
+
+  public GradStudent(String n, int i, String r) {
+    super(n, i);
+    researchArea = r;
+  }
+
+  // Getters and setters
+
+  public String getResearchArea() {
+    return researchArea;
+  }
+
+  public void setResearchArea(String r) {
+    researchArea = r;
+  }
+}
+```
+###  Class Main (where we are going to run our code)
+```java
+
+public class Main {
+
+  public static void main(String[] args) {
+    // Declaring a variable of type Student
+    Student student;
+
+    // Assigning an object of type Student to the variable
+    student = new Student("John Doe", 123);
+    System.out.println(student.getName());  // John Doe
+
+    // Assigning an object of type GradStudent to the same variable
+    student = new GradStudent("Jane Smith", 456, "Computer Science");
+    System.out.println(student.getName());  // Jane Smith
+
+    // System.out.println(student.getResearchArea());  // This line will not compile, as getResearchArea() is not defined in class Student
+  }
+}
+```
 
 
 
 ## ArrayLists
+- :warning: ArrayLists and Vectors are **NOT** inherently dynamic. 
+- When new elements are added to an ArrayList or Vector and the underlying array becomes full, the array is dynamically resized to accommodate more elements. The resizing process involves creating a new, larger array, and copying the existing elements from the old array to the new array.
 
-1. add(element) - This method adds an element to the end of the ArrayList.
+- While ArrayLists and Vectors are designed to be dynamically resizable, the process of resizing can be inefficient, especially for large lists, since it involves allocating and copying memory. In contrast, linked lists are designed to be dynamically resizable without requiring additional memory allocation or copying of elements.
+- Therefore, while ArrayLists and Vectors can behave as dynamic data structures in practice, they are not inherently dynamic in the same way that linked lists are, due to their underlying implementation.
 
-2. add(index, element) - This method inserts an element at a specific index in the ArrayList, shifting the existing elements to the right.
+- ArrayLists methods
+  1. add(element) - This method adds an element to the end of the ArrayList.
+  2. add(index, element) - This method inserts an element at a specific index in the ArrayList, shifting the existing elements to the right.
+  3. get(index) - This method returns the element at the specified index in the ArrayList.
+  4. remove(index) - This method removes the element at the specified index in the ArrayList, shifting the remaining elements to the left.
+  5. size() - This method returns the number of elements in the ArrayList.
+  6. clear() - This method removes all elements from the ArrayList.
+  7. indexOf(element) - This method returns the index of the first occurrence of the specified element in the ArrayList, or -1 if the element is not found.
+  8. contains(element) - This method returns true if the ArrayList contains the specified element, otherwise it returns false.
+  9. set(index, element) - This method replaces the element at the specified index in the ArrayList with the specified element.
 
-3. get(index) - This method returns the element at the specified index in the ArrayList.
-
-4. remove(index) - This method removes the element at the specified index in the ArrayList, shifting the remaining elements to the left.
-
-5. size() - This method returns the number of elements in the ArrayList.
-
-6. clear() - This method removes all elements from the ArrayList.
-
-7. indexOf(element) - This method returns the index of the first occurrence of the specified element in the ArrayList, or -1 if the element is not found.
-
-8. contains(element) - This method returns true if the ArrayList contains the specified element, otherwise it returns false.
-
-9. set(index, element) - This method replaces the element at the specified index in the ArrayList with the specified element.
-
+## Session-02
+-----
 
 ## Abstact Classes 
 
@@ -140,3 +216,6 @@ public class Dog extends Animal {
 This class has a constructor that calls the superclass constructor using the super keyword, and also implements the makeSound() method by printing "Woof!" to the console.
 
 By making Animal an abstract class with an abstract method, we can define a common interface for all animals without having to implement the makeSound() method for every single animal subclass. Instead, we can simply extend Animal and implement the makeSound() method for each specific animal.
+
+
+## Exceptions 
