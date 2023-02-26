@@ -224,7 +224,7 @@ By making Animal an abstract class with an abstract method, we can define a comm
 
 2. Handle it an exception immediately:
 
-   ```java
+  ```java
    try{
     // Statement that might throw an exception
    }
@@ -239,6 +239,7 @@ By making Animal an abstract class with an abstract method, we can define a comm
 public static void openfile(String s) throws IOException{
   // Statement to do
 }
+
 ```
 
 :trollface: yall better be studying and actually asking the instructors question :trollface:
