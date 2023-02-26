@@ -2,7 +2,6 @@
 
 ## Session-01
 -----
-
 ## Passing down by reference vs by value
 
 - In Java, passing by reference and passing by value have different meanings.
@@ -179,10 +178,7 @@ public class Main {
   8. contains(element) - This method returns true if the ArrayList contains the specified element, otherwise it returns false.
   9. set(index, element) - This method replaces the element at the specified index in the ArrayList with the specified element.
 
-## Session-02
------
-
-## Abstact Classes 
+## Abstract Classes  
 
 ```java
 public abstract class Animal {
@@ -219,3 +215,30 @@ By making Animal an abstract class with an abstract method, we can define a comm
 
 
 ## Exceptions 
+
+- Errors and exceptions are objects that indicates an erroneous situation, you cannot do anything about errors
+- When an exception is thrown you can:
+  1. Ignore it, **NEVER DO THIS**
+  2. Handle it right where it occurs in the code
+  3. Postpone it, handle it later on in the code
+
+2. Handle it an exception immediately:
+
+   ```java
+   try{
+    // Statement that might throw an exception
+   }
+   catch(Exception e){
+    // Statement to handle the exception 
+   }
+  ```
+
+3. Handling the exception later in the code
+
+```java
+public static void openfile(String s) throws IOException{
+  // Statement to do
+}
+
+
+:trollface: yall better be studying and actually asking the instructors question :trollface:
