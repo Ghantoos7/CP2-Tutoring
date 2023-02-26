@@ -243,3 +243,5 @@ public static void openfile(String s) throws IOException{
 ```
 
 :trollface: yall better be studying and actually asking the instructors question :trollface:
+
+this repo shall be updated and will add exercises and make it nicer
